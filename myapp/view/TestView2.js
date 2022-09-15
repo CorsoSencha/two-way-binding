@@ -2,12 +2,16 @@ Ext.define('MyApp.view.TestViewModel2', {
     extend: 'Ext.app.ViewModel',
 
     alias: 'viewmodel.test2',
+    data: {
+        x: 10,
+        y: 20
+    },
 
     formulas: {
         something: {
             bind: {
-                x: '{foo.bar.x}',
-                y: '{bar.foo.thing.zip.y}'
+                x: '{x}',
+                y: '{y}'
             },
 
             get: function (data) {
@@ -19,6 +23,7 @@ Ext.define('MyApp.view.TestViewModel2', {
 
 Ext.define('MyApp.view.TestView2', {
     extend: 'Ext.panel.Panel',
+    xtype: 'test2',
     // layout: '',
 
     // Always use this form when defining a view class. This
@@ -30,7 +35,7 @@ Ext.define('MyApp.view.TestView2', {
 
     items: [{
         bind: {
-            html: "Hello {something}"
+            html: '<p style="text-align:center"> <b>{x} + {y} =  {something}</b></p>'
 
         }
     }]

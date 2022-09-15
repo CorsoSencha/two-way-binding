@@ -20,6 +20,7 @@ Ext.define('MyApp.view.TestViewModel', {
 Ext.define('MyApp.view.TestView', {
     extend: 'Ext.panel.Panel',
     layout: 'form',
+    xtype: 'test1',
 
     // Always use this form when defining a view class. This
     // allows the creator of the component to pass data without
